@@ -10,9 +10,9 @@ namespace SBRW.Api.Data
 {
     public class ServerStatsInfo
     {
-        public ServerStatus Status { get; set; }
-        public int Online { get; set; }
-        public int Registered { get; set; }
+        public ServerStatus Status { get; set; } = ServerStatus.Offline;
+        public int Online { get; set; } = 0;
+        public int Registered { get; set; } = 0;
 
         public static Expression<Func<ServerStats, ServerStatsInfo>> Projection
         {
