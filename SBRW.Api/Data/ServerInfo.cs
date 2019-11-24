@@ -37,7 +37,8 @@ namespace SBRW.Api.Data
                     Stats = x.Stats.OrderByDescending(s => s.TrackedAt)
                         .AsQueryable()
                         .Select(ServerStatsInfo.Projection)
-                        .FirstOrDefault()
+                        .DefaultIfEmpty(null)
+                        .First()
                 };
             }
         }
